@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home-Prof.Master.cs" Inherits="Easy_Enrollment.Home2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style4 {
+            width: 323px;
+            height: 264px;
+        }
+        .auto-style5 {
+            text-align: center;
+        }
+        .auto-style6 {
+            font-size: medium;
+        }
+        </style>
+</head>
+<body>
+    <form id="form2" runat="server">
+        <div style="font-family: 'Arial Black'; font-size: x-large; font-weight: normal; font-style: normal; font-variant: normal; color: #FFFFFF; word-spacing: normal; background-color: #206BA4; background-image: none" class="auto-style5">
+            <table class="auto-style1">
+                <tr>
+                    <td style="background-color: #FFFFFF">
+                        <br />
+                        <img class="auto-style4" src="images/monsters-university-logo-272139423B-seeklogo.com.png" /><br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
+            <div class="auto-style5">
+                <asp:Button ID="Inicio" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style6" />
+&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Historial" runat="server" BackColor="White" ForeColor="#206BA4" Text="Historial" CssClass="auto-style6" />
+&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Estudiante" runat="server" BackColor="White" ForeColor="#206BA4" Text="Estudiantes" CssClass="auto-style6" />
+&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Actualizar_Nota" runat="server" BackColor="White" ForeColor="#206BA4" Text="Actualiza Notas" CssClass="auto-style6" />
+&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="Salir" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style6" />
+            </div>
+        </div>
+    
+    </form>
+    
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

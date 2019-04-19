@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passwordhashed" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellido1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Apellido2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Correo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cedula" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Rol" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Direccion" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PasswordHashed" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrarUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SelectUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SelectUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CursosMatricular">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CursosMatricularResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CursosMatricularResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GruposDeCurso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCurso" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="codigoPeriodo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GruposDeCursoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GruposDeCursoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDireccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoPostal" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="detalle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarDireccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrarDireccionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CodigosPostales">
+        <s:complexType />
+      </s:element>
+      <s:element name="CodigosPostalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CodigosPostalesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatricularGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatricularGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MatricularGrupoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialCursos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialCursosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HistorialCursosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialGruposProfesor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HistorialGruposProfesorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HistorialGruposProfesorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstudiantesEnGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EstudiantesEnGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EstudiantesEnGrupoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarNota">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoGrupo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="emailEstudiante" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="nota" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comentarios" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActualizarNotaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ActualizarNotaResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SelectUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SelectUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SelectUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SelectUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="CursosMatricularSoapIn">
+    <wsdl:part name="parameters" element="tns:CursosMatricular" />
+  </wsdl:message>
+  <wsdl:message name="CursosMatricularSoapOut">
+    <wsdl:part name="parameters" element="tns:CursosMatricularResponse" />
+  </wsdl:message>
+  <wsdl:message name="GruposDeCursoSoapIn">
+    <wsdl:part name="parameters" element="tns:GruposDeCurso" />
+  </wsdl:message>
+  <wsdl:message name="GruposDeCursoSoapOut">
+    <wsdl:part name="parameters" element="tns:GruposDeCursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDireccionSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarDireccion" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarDireccionSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarDireccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CodigosPostalesSoapIn">
+    <wsdl:part name="parameters" element="tns:CodigosPostales" />
+  </wsdl:message>
+  <wsdl:message name="CodigosPostalesSoapOut">
+    <wsdl:part name="parameters" element="tns:CodigosPostalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MatricularGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:MatricularGrupo" />
+  </wsdl:message>
+  <wsdl:message name="MatricularGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:MatricularGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HistorialCursosSoapIn">
+    <wsdl:part name="parameters" element="tns:HistorialCursos" />
+  </wsdl:message>
+  <wsdl:message name="HistorialCursosSoapOut">
+    <wsdl:part name="parameters" element="tns:HistorialCursosResponse" />
+  </wsdl:message>
+  <wsdl:message name="HistorialGruposProfesorSoapIn">
+    <wsdl:part name="parameters" element="tns:HistorialGruposProfesor" />
+  </wsdl:message>
+  <wsdl:message name="HistorialGruposProfesorSoapOut">
+    <wsdl:part name="parameters" element="tns:HistorialGruposProfesorResponse" />
+  </wsdl:message>
+  <wsdl:message name="EstudiantesEnGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:EstudiantesEnGrupo" />
+  </wsdl:message>
+  <wsdl:message name="EstudiantesEnGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:EstudiantesEnGrupoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarNotaSoapIn">
+    <wsdl:part name="parameters" element="tns:ActualizarNota" />
+  </wsdl:message>
+  <wsdl:message name="ActualizarNotaSoapOut">
+    <wsdl:part name="parameters" element="tns:ActualizarNotaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioWebSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <wsdl:input message="tns:RegistrarUsuarioSoapIn" />
+      <wsdl:output message="tns:RegistrarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectUsuario">
+      <wsdl:input message="tns:SelectUsuarioSoapIn" />
+      <wsdl:output message="tns:SelectUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CursosMatricular">
+      <wsdl:input message="tns:CursosMatricularSoapIn" />
+      <wsdl:output message="tns:CursosMatricularSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GruposDeCurso">
+      <wsdl:input message="tns:GruposDeCursoSoapIn" />
+      <wsdl:output message="tns:GruposDeCursoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDireccion">
+      <wsdl:input message="tns:RegistrarDireccionSoapIn" />
+      <wsdl:output message="tns:RegistrarDireccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CodigosPostales">
+      <wsdl:input message="tns:CodigosPostalesSoapIn" />
+      <wsdl:output message="tns:CodigosPostalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatricularGrupo">
+      <wsdl:input message="tns:MatricularGrupoSoapIn" />
+      <wsdl:output message="tns:MatricularGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HistorialCursos">
+      <wsdl:input message="tns:HistorialCursosSoapIn" />
+      <wsdl:output message="tns:HistorialCursosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HistorialGruposProfesor">
+      <wsdl:input message="tns:HistorialGruposProfesorSoapIn" />
+      <wsdl:output message="tns:HistorialGruposProfesorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EstudiantesEnGrupo">
+      <wsdl:input message="tns:EstudiantesEnGrupoSoapIn" />
+      <wsdl:output message="tns:EstudiantesEnGrupoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNota">
+      <wsdl:input message="tns:ActualizarNotaSoapIn" />
+      <wsdl:output message="tns:ActualizarNotaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioWebSoap" type="tns:ServicioWebSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/RegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUsuario">
+      <soap:operation soapAction="http://tempuri.org/SelectUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CursosMatricular">
+      <soap:operation soapAction="http://tempuri.org/CursosMatricular" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GruposDeCurso">
+      <soap:operation soapAction="http://tempuri.org/GruposDeCurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDireccion">
+      <soap:operation soapAction="http://tempuri.org/RegistrarDireccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigosPostales">
+      <soap:operation soapAction="http://tempuri.org/CodigosPostales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatricularGrupo">
+      <soap:operation soapAction="http://tempuri.org/MatricularGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialCursos">
+      <soap:operation soapAction="http://tempuri.org/HistorialCursos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialGruposProfesor">
+      <soap:operation soapAction="http://tempuri.org/HistorialGruposProfesor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstudiantesEnGrupo">
+      <soap:operation soapAction="http://tempuri.org/EstudiantesEnGrupo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNota">
+      <soap:operation soapAction="http://tempuri.org/ActualizarNota" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioWebSoap12" type="tns:ServicioWebSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SelectUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CursosMatricular">
+      <soap12:operation soapAction="http://tempuri.org/CursosMatricular" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GruposDeCurso">
+      <soap12:operation soapAction="http://tempuri.org/GruposDeCurso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarDireccion">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarDireccion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CodigosPostales">
+      <soap12:operation soapAction="http://tempuri.org/CodigosPostales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatricularGrupo">
+      <soap12:operation soapAction="http://tempuri.org/MatricularGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialCursos">
+      <soap12:operation soapAction="http://tempuri.org/HistorialCursos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HistorialGruposProfesor">
+      <soap12:operation soapAction="http://tempuri.org/HistorialGruposProfesor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstudiantesEnGrupo">
+      <soap12:operation soapAction="http://tempuri.org/EstudiantesEnGrupo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarNota">
+      <soap12:operation soapAction="http://tempuri.org/ActualizarNota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioWeb">
+    <wsdl:port name="ServicioWebSoap" binding="tns:ServicioWebSoap">
+      <soap:address location="http://localhost:55000/ServicioWeb.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioWebSoap12" binding="tns:ServicioWebSoap12">
+      <soap12:address location="http://localhost:55000/ServicioWeb.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
