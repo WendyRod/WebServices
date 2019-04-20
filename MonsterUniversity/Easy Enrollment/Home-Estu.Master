@@ -14,10 +14,10 @@
         }
         .auto-style4 {
             width: 323px;
-            height: 264px;
         }
         .auto-style5 {
             font-size: medium;
+            height: 28px;
         }
         </style>
 </head>
@@ -38,6 +38,8 @@
             <asp:Button ID="Historial" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Historial_Click" Text="Historial" CssClass="auto-style5" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Matricular" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Matricular_Click" Text="Matricular" CssClass="auto-style5" />
+
+
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Salir" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style5" />
             <br />
@@ -46,6 +48,8 @@
     
         <div>
             <asp:ContentPlaceHolder ID="head" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
             </asp:ContentPlaceHolder>
         </div>
 
