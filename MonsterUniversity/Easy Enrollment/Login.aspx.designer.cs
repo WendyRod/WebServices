@@ -31,21 +31,21 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.TextBox Pass;
         
         /// <summary>
-        /// Control Acceder.
+        /// Control Ingresar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Acceder;
+        protected global::System.Web.UI.WebControls.Button Ingresar;
         
         /// <summary>
-        /// Control Registro.
+        /// Control Registrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Registro;
+        protected global::System.Web.UI.WebControls.Button Registrar;
     }
 }

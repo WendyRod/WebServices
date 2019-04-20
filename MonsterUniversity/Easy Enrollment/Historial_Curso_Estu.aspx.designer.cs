@@ -10,60 +10,53 @@
 namespace Easy_Enrollment {
     
     
-    public partial class Home {
-        
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
+    public partial class Historial_Curso_Estu {
+
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
-        /// Control Inicio.
+        /// Control ListBox_Groups.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Inicio;
+        protected global::System.Web.UI.WebControls.ListBox ListBox_Groups;
         
         /// <summary>
-        /// Control Historial.
+        /// Control Label_CourseName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Historial;
+        protected global::System.Web.UI.WebControls.Label Label_CourseName;
         
         /// <summary>
-        /// Control Matricular.
+        /// Control Label_GroupName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Matricular;
+        protected global::System.Web.UI.WebControls.Label Label_GroupName;
         
         /// <summary>
-        /// Control Salir.
+        /// Control Label_Professor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Salir;
+        protected global::System.Web.UI.WebControls.Label Label_Professor;
         
         /// <summary>
-        /// Control head.
+        /// Control Label_Status.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label Label_Status;
     }
 }
