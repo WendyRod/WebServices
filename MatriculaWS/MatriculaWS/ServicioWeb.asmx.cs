@@ -407,6 +407,20 @@ namespace MatriculaWS
 
         }
 
+        [WebMethod]
+        public int MatricularCarrera(int codigoCarrera, string token)
+        {
+            return 1;
+        }
+
+        [WebMethod]
+        public DataSet ListarCarreras()
+        {
+            return new DataSet();
+        }
+
+
+
         private string createToken(string rolId, string correo)
         {
             //aqui va el manejo de sesion y tokens
@@ -423,5 +437,8 @@ namespace MatriculaWS
             string correo = token.Substring(1);
             return new string[2] { validacion, correo };
         }
+
+
+
     }
 }
