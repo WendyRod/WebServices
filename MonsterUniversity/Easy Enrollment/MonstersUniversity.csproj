@@ -76,7 +76,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="css\Login.css" />
     <Content Include="css\Registro_Usuario.css" />
+    <Content Include="Cursos_Matricular.aspx" />
+    <Content Include="Cursos_Profesor.aspx" />
     <Content Include="Home_Estudiante.aspx" />
     <Content Include="Home_Profesores.aspx" />
     <Content Include="images\Diseño sin título.png" />
@@ -92,6 +95,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos_Matricular.aspx.cs">
+      <DependentUpon>Cursos_Matricular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos_Matricular.aspx.designer.cs">
+      <DependentUpon>Cursos_Matricular.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cursos_Profesor.aspx.cs">
+      <DependentUpon>Cursos_Profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos_Profesor.aspx.designer.cs">
+      <DependentUpon>Cursos_Profesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home-Estu.Master.cs">
       <DependentUpon>Home-Estu.Master</DependentUpon>
