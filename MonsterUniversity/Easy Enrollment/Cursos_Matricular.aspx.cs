@@ -13,5 +13,10 @@ namespace Easy_Enrollment
         {
 
         }
+
+        protected void Matricular(object sender, EventArgs e)
+        {
+            Response.Redirect("http://www.google.com");
+        }
     }
 }

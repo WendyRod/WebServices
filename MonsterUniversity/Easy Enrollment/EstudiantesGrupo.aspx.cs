@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Easy_Enrollment
 {
-    public partial class Cursos_Profesor : System.Web.UI.Page
+    public partial class EstudiantesGrupo : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,11 +16,11 @@ namespace Easy_Enrollment
 
         protected void Course_Selected(object sender, EventArgs e)
         {
-            
+
         }
         protected void GroupSelected(object sender, EventArgs e)
         {
-            
+
 
         }
     }
