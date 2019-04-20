@@ -13,5 +13,20 @@ namespace Easy_Enrollment
         {
 
         }
+
+        protected void CodGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
