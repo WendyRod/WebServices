@@ -33,5 +33,6 @@ namespace Easy_Enrollment
         {
             Response.Redirect("Cursos_Matricular.aspx");
         }
+
     }
-    }
+}

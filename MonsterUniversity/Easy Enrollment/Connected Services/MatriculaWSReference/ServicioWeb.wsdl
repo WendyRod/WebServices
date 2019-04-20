@@ -233,6 +233,38 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="MatricularCarrera">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="codigoCarrera" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MatricularCarreraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MatricularCarreraResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ListarCarreras">
+        <s:complexType />
+      </s:element>
+      <s:element name="ListarCarrerasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListarCarrerasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="LoginSoapIn">
@@ -307,6 +339,18 @@
   <wsdl:message name="ActualizarNotaSoapOut">
     <wsdl:part name="parameters" element="tns:ActualizarNotaResponse" />
   </wsdl:message>
+  <wsdl:message name="MatricularCarreraSoapIn">
+    <wsdl:part name="parameters" element="tns:MatricularCarrera" />
+  </wsdl:message>
+  <wsdl:message name="MatricularCarreraSoapOut">
+    <wsdl:part name="parameters" element="tns:MatricularCarreraResponse" />
+  </wsdl:message>
+  <wsdl:message name="ListarCarrerasSoapIn">
+    <wsdl:part name="parameters" element="tns:ListarCarreras" />
+  </wsdl:message>
+  <wsdl:message name="ListarCarrerasSoapOut">
+    <wsdl:part name="parameters" element="tns:ListarCarrerasResponse" />
+  </wsdl:message>
   <wsdl:portType name="ServicioWebSoap">
     <wsdl:operation name="Login">
       <wsdl:input message="tns:LoginSoapIn" />
@@ -355,6 +399,14 @@
     <wsdl:operation name="ActualizarNota">
       <wsdl:input message="tns:ActualizarNotaSoapIn" />
       <wsdl:output message="tns:ActualizarNotaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MatricularCarrera">
+      <wsdl:input message="tns:MatricularCarreraSoapIn" />
+      <wsdl:output message="tns:MatricularCarreraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarCarreras">
+      <wsdl:input message="tns:ListarCarrerasSoapIn" />
+      <wsdl:output message="tns:ListarCarrerasSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServicioWebSoap" type="tns:ServicioWebSoap">
@@ -467,6 +519,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="MatricularCarrera">
+      <soap:operation soapAction="http://tempuri.org/MatricularCarrera" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCarreras">
+      <soap:operation soapAction="http://tempuri.org/ListarCarreras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServicioWebSoap12" type="tns:ServicioWebSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -571,6 +641,24 @@
     </wsdl:operation>
     <wsdl:operation name="ActualizarNota">
       <soap12:operation soapAction="http://tempuri.org/ActualizarNota" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MatricularCarrera">
+      <soap12:operation soapAction="http://tempuri.org/MatricularCarrera" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListarCarreras">
+      <soap12:operation soapAction="http://tempuri.org/ListarCarreras" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
