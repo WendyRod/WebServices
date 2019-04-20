@@ -10,69 +10,51 @@
 namespace Easy_Enrollment {
     
     
-    public partial class Home2 {
+    public partial class ActualizarNota {
         
         /// <summary>
-        /// Control form2.
+        /// Control ListBox_CodGroup.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form2;
+        protected global::System.Web.UI.WebControls.ListBox ListBox_CodGroup;
         
         /// <summary>
-        /// Control Inicio.
+        /// Control Label_CourseName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Inicio;
+        protected global::System.Web.UI.WebControls.Label Label_CourseName;
         
         /// <summary>
-        /// Control Historial.
+        /// Control Label_GroupName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Historial;
+        protected global::System.Web.UI.WebControls.Label Label_GroupName;
         
         /// <summary>
-        /// Control Estudiante.
+        /// Control Label_Professor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Estudiante;
+        protected global::System.Web.UI.WebControls.Label Label_Professor;
         
         /// <summary>
-        /// Control Actualizar_Nota.
+        /// Control Label_Status.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Actualizar_Nota;
-        
-        /// <summary>
-        /// Control Salir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Salir;
-        
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label Label_Status;
     }
 }

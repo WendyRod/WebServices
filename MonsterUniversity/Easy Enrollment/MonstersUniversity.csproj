@@ -76,6 +76,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="ActualizarNota.aspx" />
     <Content Include="css\Login.css" />
     <Content Include="css\Registro_Usuario.css" />
     <Content Include="Cursos_Matricular.aspx" />
@@ -92,6 +93,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarNota.aspx.cs">
+      <DependentUpon>ActualizarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarNota.aspx.designer.cs">
+      <DependentUpon>ActualizarNota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend.cs" />
     <Compile Include="Connected Services\MatriculaWSReference\Reference.cs">
       <AutoGen>True</AutoGen>

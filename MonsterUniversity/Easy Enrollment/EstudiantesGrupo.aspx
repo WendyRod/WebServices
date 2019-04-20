@@ -3,17 +3,16 @@
 
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-        <asp:Panel ID="Panel3" runat="server" Height="242px" Width="856px"/>
 
-    <style type="text/css">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <asp:Panel ID="Panel3" runat="server" Height="242px" Width="856px">
+
+        <style type="text/css">
         .auto-style7 {
             width: 300px;
         }
     </style>
 
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
     <table style="width:100%;" __designer:mapid="25d">
     <tr __designer:mapid="25e">
         <td style="text-align: center" __designer:mapid="25f" class="auto-style7">Cursos:<br __designer:mapid="260" />
@@ -31,5 +30,6 @@
          </td>
     </tr>
 </table>
+        </asp:Panel>
 </asp:Content>
 

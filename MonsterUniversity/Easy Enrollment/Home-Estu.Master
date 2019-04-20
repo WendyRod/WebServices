@@ -35,9 +35,9 @@
             </table>
             <asp:Button ID="Inicio" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style5" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Historial" runat="server" BackColor="White" ForeColor="#206BA4" Text="Historial" CssClass="auto-style5" />
+            <asp:Button ID="Historial" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Historial_Click" Text="Historial" CssClass="auto-style5" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Matricular" runat="server" BackColor="White" ForeColor="#206BA4" Text="Matricular" CssClass="auto-style5" />
+            <asp:Button ID="Matricular" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Matricular_Click" Text="Matricular" CssClass="auto-style5" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Salir" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style5" />
             <br />

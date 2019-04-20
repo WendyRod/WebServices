@@ -23,5 +23,20 @@ namespace Easy_Enrollment
         {
             Response.Redirect("Login.aspx");
         }
+
+        protected void Actualizar_Nota_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ActualizarNota.aspx");
+        }
+
+        protected void Historial_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Cursos_Profesor.aspx");
+        }
+
+        protected void Estudiante_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EstudiantesGrupo.aspx");
+        }
     }
 }

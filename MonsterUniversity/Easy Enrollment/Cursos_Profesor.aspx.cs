@@ -23,5 +23,11 @@ namespace Easy_Enrollment
             
 
         }
+
+        protected void Button_Enroll_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

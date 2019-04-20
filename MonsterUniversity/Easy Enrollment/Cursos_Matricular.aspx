@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home-Estu.Master" AutoEventWireup="true" CodeFile="Cursos_Matricular.aspx.cs" Inherits="Easy_Enrollment.Cursos_Matricular" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <asp:Panel ID="Panel3" runat="server" Height="242px" Width="856px">
      
     <br />

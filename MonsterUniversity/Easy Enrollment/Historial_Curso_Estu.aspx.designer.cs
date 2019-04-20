@@ -11,9 +11,7 @@ namespace Easy_Enrollment {
     
     
     public partial class Historial_Curso_Estu {
-
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
+        
         /// <summary>
         /// Control ListBox_Groups.
         /// </summary>
