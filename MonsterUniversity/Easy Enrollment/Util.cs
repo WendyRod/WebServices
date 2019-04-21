@@ -14,7 +14,7 @@ namespace Easy_Enrollment
 
         public static DataTable Direcciones()
         {
-            if (direcciones==null)
+            if (direcciones == null)
                 direcciones = WebService.CodigosPostales();
             return direcciones;
         }

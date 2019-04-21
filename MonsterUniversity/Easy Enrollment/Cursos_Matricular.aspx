@@ -10,13 +10,13 @@
             <td style="text-align: center">
                 Cursos:<br />
                 
-                <asp:ListBox ID="ListBox_Courses" runat="server" AutoPostBack="True" Rows="8" Width="170px" ></asp:ListBox>
+                <asp:ListBox ID="ListBox_Courses" runat="server" AutoPostBack="True" Rows="8" Width="170px" OnSelectedIndexChanged="Course_Selected" ></asp:ListBox>
             </td>
             <td style="text-align: center">
                 Grupos del curso
                 <asp:Label ID="Label_Course_Name" runat="server" Text="_______"></asp:Label>
                 <br />
-                <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="170px"></asp:ListBox>
+                <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="170px" OnSelectedIndexChanged="GroupSelected"></asp:ListBox>
             </td>
             <td style="text-align: center; width: 705px;">Curso:
                 <asp:Label ID="Label_Course_Name2" runat="server" Text="Label"></asp:Label>
