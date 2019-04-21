@@ -35,19 +35,20 @@ Inherits="Easy_Enrollment.Login" %>
               <asp:TextBox id="Pass" type="Password" runat="server" />
               <span class="i i-warning"></span>
             </p>
+              <asp:Label ID="LabelRespuesta" runat="server" Text="Label"></asp:Label>
             <asp:Button
-              id="Acceder"
+              id="Ingresar"
               runat="server"
-              OnClick="Acceder_Click"
+              OnClick="Ingresar_Click"
               Text="Acceder"
             />
           </div>
             <br />
           <label for="user">¿No tienes una cuenta?</label>
           <asp:Button
-            id="Registro"
+            id="Registrar"
             runat="server"
-            OnClick="Registro_Click"
+            OnClick="Registrar_Click"
             Text="Registro"
           />
           <br />

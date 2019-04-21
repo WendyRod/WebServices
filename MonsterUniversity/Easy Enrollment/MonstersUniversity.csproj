@@ -76,11 +76,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="ActualizarNota.aspx" />
     <Content Include="css\Login.css" />
-    <Content Include="css\Registro_Usuario.css" />
     <Content Include="Cursos_Matricular.aspx" />
     <Content Include="Cursos_Profesor.aspx" />
     <Content Include="EstudiantesGrupo.aspx" />
+    <Content Include="Historial_Curso_Estu.aspx" />
     <Content Include="Home_Estudiante.aspx" />
     <Content Include="Home_Profesores.aspx" />
     <Content Include="images\Diseño sin título.png" />
@@ -91,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarNota.aspx.cs">
+      <DependentUpon>ActualizarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarNota.aspx.designer.cs">
+      <DependentUpon>ActualizarNota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend.cs" />
     <Compile Include="Connected Services\MatriculaWSReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -117,6 +125,13 @@
     </Compile>
     <Compile Include="EstudiantesGrupo.aspx.designer.cs">
       <DependentUpon>EstudiantesGrupo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Historial_Curso_Estu.aspx.cs">
+      <DependentUpon>Historial_Curso_Estu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Historial_Curso_Estu.aspx.designer.cs">
+      <DependentUpon>Historial_Curso_Estu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home-Estu.Master.cs">
       <DependentUpon>Home-Estu.Master</DependentUpon>

@@ -18,12 +18,19 @@ namespace Easy_Enrollment
 
         public int Login(string email, string password)
         {
-            Token = WebService.Login(email, GetHashString(password));
-
-            int rolId = Int32.Parse(Token.Substring(0, 1));
-            Correo = Token.Substring(1);
-
-            return rolId;
+            Token = WebService.Login(email, password);
+            //Token = WebService.Login(email, GetHashString(password));
+            try
+            {
+                RolId = Int32.Parse(Token.Substring(0, 1));
+                Correo = Token.Substring(1);
+                return RolId;
+            }
+            catch( Exception ex)
+            {
+                return -1;
+            }
+            
 
         }
 

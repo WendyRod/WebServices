@@ -407,6 +407,60 @@ namespace MatriculaWS
 
         }
 
+        [WebMethod]
+        public int MatricularCarrera(int codigoCarrera, string token)
+        {
+            string correo = ValidateToken(token)[1];
+
+            if (Conn == null)
+                Conn = new SqlConnection(ConnectionString);
+
+            DataSet ds = new DataSet();
+            int returnValue = 0;
+
+            using (SqlCommand cmd = new SqlCommand("MATRICULAR_CARRERA", Conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@pCarrera", SqlDbType.Int).Value = codigoCarrera;
+                cmd.Parameters.AddWithValue("@pCorreo", SqlDbType.NVarChar).Value = correo;
+
+                var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+                returnParameter.Direction = ParameterDirection.ReturnValue;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(ds);
+                Conn.Open();
+                cmd.ExecuteNonQuery();
+                Conn.Close();
+                returnValue = Int32.Parse(returnParameter.Value.ToString());
+            }
+            return returnValue;
+        }
+
+        [WebMethod]
+        public DataSet ListarCarreras()
+        {
+            if (Conn == null)
+                Conn = new SqlConnection(ConnectionString);
+
+            DataSet ds = new DataSet();
+
+            using (SqlCommand cmd = new SqlCommand("LISTAR_CARRERAS", Conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(ds);
+                Conn.Open();
+                cmd.ExecuteNonQuery();
+                Conn.Close();
+            }
+            return ds;
+        }
+
+
+
         private string createToken(string rolId, string correo)
         {
             //aqui va el manejo de sesion y tokens
@@ -423,5 +477,8 @@ namespace MatriculaWS
             string correo = token.Substring(1);
             return new string[2] { validacion, correo };
         }
+
+
+
     }
 }

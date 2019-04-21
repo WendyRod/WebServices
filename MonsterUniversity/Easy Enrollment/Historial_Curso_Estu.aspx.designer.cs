@@ -10,51 +10,51 @@
 namespace Easy_Enrollment {
     
     
-    public partial class Login {
+    public partial class Historial_Curso_Estu {
         
         /// <summary>
-        /// Control Mail.
+        /// Control ListBox_Groups.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Mail;
+        protected global::System.Web.UI.WebControls.ListBox ListBox_Groups;
         
         /// <summary>
-        /// Control Pass.
+        /// Control Label_CourseName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Pass;
+        protected global::System.Web.UI.WebControls.Label Label_CourseName;
         
         /// <summary>
-        /// Control LabelRespuesta.
+        /// Control Label_GroupName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRespuesta;
+        protected global::System.Web.UI.WebControls.Label Label_GroupName;
         
         /// <summary>
-        /// Control Ingresar.
+        /// Control Label_Professor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Ingresar;
+        protected global::System.Web.UI.WebControls.Label Label_Professor;
         
         /// <summary>
-        /// Control Registrar.
+        /// Control Label_Status.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Registrar;
+        protected global::System.Web.UI.WebControls.Label Label_Status;
     }
 }

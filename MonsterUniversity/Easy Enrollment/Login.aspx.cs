@@ -11,55 +11,52 @@ namespace Easy_Enrollment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LabelRespuesta.Text = "";
         }
 
-        public void Acceder_Click(object sender, EventArgs e)
+
+        protected void Ingresar_Click(object sender, EventArgs e)
         {
 
-            if (Method())
+            try
             {
-                Response.Redirect("Exito");
+                string email = Mail.Text.Trim();
+                var addr = new System.Net.Mail.MailAddress(email);
+                if (addr.Address == email)
+                {
+                    Backend backend = new Backend();
+                    int res = backend.Login(email, Pass.Text.Trim());
+                    switch (res)
+                    {
+                        case 2:
+                            Response.Redirect("Home_Profesores.aspx");
+                            break;
+                        case 3:
+                            Response.Redirect("Home_Estudiante.aspx");
+                            break;
+                        default:
+                            LabelRespuesta.Text = "Usuario o contraseña incorrectos.";
+                            break;
+                    }
+                }
+                else
+                {
+                    LabelRespuesta.Text = "Correo incorrecto.";
+                }
+
             }
-            else
+            catch
             {
-                Response.Redirect("Fallido");
+                LabelRespuesta.Text = "Correo incorrecto.";
             }
 
-            //Response.Redirect("./Login.aspx");
+
+
         }
 
-        private bool Method()
+        protected void Registrar_Click(object sender, EventArgs e)
         {
-            string mail = Mail.Text;
-            string pass = Pass.Text;
-
-            if (CheckLogin(mail, pass))
-                return true;
-            else
-                return false;
+            Response.Redirect("Registro.aspx");
         }
-
-        /// <summary>
-        /// Este metodo llama a la base de datos y verifica si el usuario y password existen.
-        /// </summary>
-        /// <param name="mail">Correo del usuario</param>
-        /// <param name="pass">Contraseña</param>
-        /// <returns>Retorna True en caso de encontrar coincidencias en la Base de datos.</returns>
-        private bool CheckLogin(string mail, string pass)
-        {
-            //TODO: Crear logica para verificar el usuario.
-            if (mail.Equals("admin") && pass.Equals("admin"))
-                return true;
-            else
-                return false;
-        }
-
-        public void Registro_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("./Registro.aspx");
-            //Response.Redirect("./Login.aspx");
-        }
-
     }
 }

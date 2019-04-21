@@ -1,26 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home-Prof.master" AutoEventWireup="true" CodeFile="Cursos_Profesor.aspx.cs" Inherits="Easy_Enrollment.Cursos_Profesor" %>
 
-<script runat="server">
-
-    protected void Course_Selected(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void Button_Enroll_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void GroupSelected(object sender, EventArgs e)
-    {
-
-    }
-</script>
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <table style="width:100%;" __designer:mapid="25d">
     <tr __designer:mapid="25e">
