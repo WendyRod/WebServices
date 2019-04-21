@@ -3,15 +3,31 @@
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <table style="width:100%;" __designer:mapid="25d">
+    <table style="width:100%; height: 335px;" __designer:mapid="25d">
     <tr __designer:mapid="25e">
-        <td style="text-align: center" __designer:mapid="25f">Cursos:<br __designer:mapid="260" />
-            <asp:ListBox ID="ListBox_Courses" runat="server" AutoPostBack="True" OnSelectedIndexChanged="Course_Selected" Rows="8" Width="170px"></asp:ListBox>
+        <td style="text-align: center" __designer:mapid="25f">
+            <br />
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Font-Size="20pt" Text="Cursos"></asp:Label>
+            <br />
+            <br __designer:mapid="260" />
+            <asp:ListBox ID="ListBox_Courses" runat="server" AutoPostBack="True" Rows="8" Width="170px"></asp:ListBox>
+            <br />
+            <br />
+            <br />
+            <br />
         </td>
-        <td style="text-align: center" __designer:mapid="262">Grupos para el curso:
-                <asp:Label ID="Label_Course_Name" runat="server" Text="_______"></asp:Label>
+        <td style="text-align: center" __designer:mapid="262">
+            <br />
+            <br />
+            <asp:Label ID="Label2" runat="server" Font-Size="20pt" Text="Grupos para el curso"></asp:Label>
+                <br />
             <br __designer:mapid="264" />
             <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="184px" OnSelectedIndexChanged="GroupSelected"></asp:ListBox>
+            <br />
+            <br />
+            <br />
          </td>
         <td style="text-align: center" __designer:mapid="266">Curso:
                 <asp:Label ID="Label_Course_Name2" runat="server" Text="Label"></asp:Label>
@@ -23,6 +39,7 @@
             <asp:Button ID="Button_Enroll" runat="server" OnClick="Button_Enroll_Click" Text="Asignar Grupo" />
             <br __designer:mapid="272" />
             <asp:Label ID="Label_Errors" runat="server"></asp:Label>
+            <br />
         </td>
     </tr>
 </table>
