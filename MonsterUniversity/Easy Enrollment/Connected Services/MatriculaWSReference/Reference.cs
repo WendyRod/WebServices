@@ -18,10 +18,10 @@ namespace Easy_Enrollment.MatriculaWSReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        string Login(string correo, string passwordhashed);
+        int Login(string correo, string passwordhashed);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Login", ReplyAction="*")]
-        System.Threading.Tasks.Task<string> LoginAsync(string correo, string passwordhashed);
+        System.Threading.Tasks.Task<int> LoginAsync(string correo, string passwordhashed);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -32,24 +32,31 @@ namespace Easy_Enrollment.MatriculaWSReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet SelectUsuario(string token);
+        System.Data.DataTable SelectUsuario(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SelectUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> SelectUsuarioAsync(string token);
+        System.Threading.Tasks.Task<System.Data.DataTable> SelectUsuarioAsync(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CursosMatricular", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet CursosMatricular(string token);
+        System.Data.DataTable CursosMatricular(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CursosMatricular", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> CursosMatricularAsync(string token);
+        System.Threading.Tasks.Task<System.Data.DataTable> CursosMatricularAsync(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GruposDeCurso", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet GruposDeCurso(int idCurso, string codigoPeriodo);
+        System.Data.DataTable GruposDeCurso(int idCurso, string codigoPeriodo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GruposDeCurso", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> GruposDeCursoAsync(int idCurso, string codigoPeriodo);
+        System.Threading.Tasks.Task<System.Data.DataTable> GruposDeCursoAsync(int idCurso, string codigoPeriodo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HorarioGrupo", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string HorarioGrupo(int idGrupo);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HorarioGrupo", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> HorarioGrupoAsync(int idGrupo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarDireccion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -60,59 +67,59 @@ namespace Easy_Enrollment.MatriculaWSReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CodigosPostales", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet CodigosPostales();
+        System.Data.DataTable CodigosPostales();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/CodigosPostales", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> CodigosPostalesAsync();
+        System.Threading.Tasks.Task<System.Data.DataTable> CodigosPostalesAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MatricularGrupo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int MatricularGrupo(int codigoGrupo, string token);
+        int MatricularGrupo(int codigoGrupo, string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MatricularGrupo", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> MatricularGrupoAsync(int codigoGrupo, string token);
+        System.Threading.Tasks.Task<int> MatricularGrupoAsync(int codigoGrupo, string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HistorialCursos", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet HistorialCursos(string token);
+        System.Data.DataTable HistorialCursos(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HistorialCursos", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> HistorialCursosAsync(string token);
+        System.Threading.Tasks.Task<System.Data.DataTable> HistorialCursosAsync(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HistorialGruposProfesor", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet HistorialGruposProfesor(string token);
+        System.Data.DataTable HistorialGruposProfesor(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HistorialGruposProfesor", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> HistorialGruposProfesorAsync(string token);
+        System.Threading.Tasks.Task<System.Data.DataTable> HistorialGruposProfesorAsync(string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EstudiantesEnGrupo", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet EstudiantesEnGrupo(int codigoGrupo, string token);
+        System.Data.DataTable EstudiantesEnGrupo(int codigoGrupo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/EstudiantesEnGrupo", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> EstudiantesEnGrupoAsync(int codigoGrupo, string token);
+        System.Threading.Tasks.Task<System.Data.DataTable> EstudiantesEnGrupoAsync(int codigoGrupo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ActualizarNota", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios, string token);
+        int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ActualizarNota", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> ActualizarNotaAsync(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios, string token);
+        System.Threading.Tasks.Task<int> ActualizarNotaAsync(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MatricularCarrera", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int MatricularCarrera(int codigoCarrera, string token);
+        int MatricularCarrera(int codigoCarrera, string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/MatricularCarrera", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> MatricularCarreraAsync(int codigoCarrera, string token);
+        System.Threading.Tasks.Task<int> MatricularCarreraAsync(int codigoCarrera, string correo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCarreras", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ListarCarreras();
+        System.Data.DataTable ListarCarreras();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ListarCarreras", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> ListarCarrerasAsync();
+        System.Threading.Tasks.Task<System.Data.DataTable> ListarCarrerasAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -142,11 +149,11 @@ namespace Easy_Enrollment.MatriculaWSReference {
                 base(binding, remoteAddress) {
         }
         
-        public string Login(string correo, string passwordhashed) {
+        public int Login(string correo, string passwordhashed) {
             return base.Channel.Login(correo, passwordhashed);
         }
         
-        public System.Threading.Tasks.Task<string> LoginAsync(string correo, string passwordhashed) {
+        public System.Threading.Tasks.Task<int> LoginAsync(string correo, string passwordhashed) {
             return base.Channel.LoginAsync(correo, passwordhashed);
         }
         
@@ -158,28 +165,36 @@ namespace Easy_Enrollment.MatriculaWSReference {
             return base.Channel.RegistrarUsuarioAsync(Nombre, Apellido1, Apellido2, Correo, Telefono, Cedula, Rol, Direccion, PasswordHashed);
         }
         
-        public System.Data.DataSet SelectUsuario(string token) {
-            return base.Channel.SelectUsuario(token);
+        public System.Data.DataTable SelectUsuario(string correo) {
+            return base.Channel.SelectUsuario(correo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> SelectUsuarioAsync(string token) {
-            return base.Channel.SelectUsuarioAsync(token);
+        public System.Threading.Tasks.Task<System.Data.DataTable> SelectUsuarioAsync(string correo) {
+            return base.Channel.SelectUsuarioAsync(correo);
         }
         
-        public System.Data.DataSet CursosMatricular(string token) {
-            return base.Channel.CursosMatricular(token);
+        public System.Data.DataTable CursosMatricular(string correo) {
+            return base.Channel.CursosMatricular(correo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> CursosMatricularAsync(string token) {
-            return base.Channel.CursosMatricularAsync(token);
+        public System.Threading.Tasks.Task<System.Data.DataTable> CursosMatricularAsync(string correo) {
+            return base.Channel.CursosMatricularAsync(correo);
         }
         
-        public System.Data.DataSet GruposDeCurso(int idCurso, string codigoPeriodo) {
+        public System.Data.DataTable GruposDeCurso(int idCurso, string codigoPeriodo) {
             return base.Channel.GruposDeCurso(idCurso, codigoPeriodo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> GruposDeCursoAsync(int idCurso, string codigoPeriodo) {
+        public System.Threading.Tasks.Task<System.Data.DataTable> GruposDeCursoAsync(int idCurso, string codigoPeriodo) {
             return base.Channel.GruposDeCursoAsync(idCurso, codigoPeriodo);
+        }
+        
+        public string HorarioGrupo(int idGrupo) {
+            return base.Channel.HorarioGrupo(idGrupo);
+        }
+        
+        public System.Threading.Tasks.Task<string> HorarioGrupoAsync(int idGrupo) {
+            return base.Channel.HorarioGrupoAsync(idGrupo);
         }
         
         public int RegistrarDireccion(int codigoPostal, string detalle) {
@@ -190,67 +205,67 @@ namespace Easy_Enrollment.MatriculaWSReference {
             return base.Channel.RegistrarDireccionAsync(codigoPostal, detalle);
         }
         
-        public System.Data.DataSet CodigosPostales() {
+        public System.Data.DataTable CodigosPostales() {
             return base.Channel.CodigosPostales();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> CodigosPostalesAsync() {
+        public System.Threading.Tasks.Task<System.Data.DataTable> CodigosPostalesAsync() {
             return base.Channel.CodigosPostalesAsync();
         }
         
-        public int MatricularGrupo(int codigoGrupo, string token) {
-            return base.Channel.MatricularGrupo(codigoGrupo, token);
+        public int MatricularGrupo(int codigoGrupo, string correo) {
+            return base.Channel.MatricularGrupo(codigoGrupo, correo);
         }
         
-        public System.Threading.Tasks.Task<int> MatricularGrupoAsync(int codigoGrupo, string token) {
-            return base.Channel.MatricularGrupoAsync(codigoGrupo, token);
+        public System.Threading.Tasks.Task<int> MatricularGrupoAsync(int codigoGrupo, string correo) {
+            return base.Channel.MatricularGrupoAsync(codigoGrupo, correo);
         }
         
-        public System.Data.DataSet HistorialCursos(string token) {
-            return base.Channel.HistorialCursos(token);
+        public System.Data.DataTable HistorialCursos(string correo) {
+            return base.Channel.HistorialCursos(correo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> HistorialCursosAsync(string token) {
-            return base.Channel.HistorialCursosAsync(token);
+        public System.Threading.Tasks.Task<System.Data.DataTable> HistorialCursosAsync(string correo) {
+            return base.Channel.HistorialCursosAsync(correo);
         }
         
-        public System.Data.DataSet HistorialGruposProfesor(string token) {
-            return base.Channel.HistorialGruposProfesor(token);
+        public System.Data.DataTable HistorialGruposProfesor(string correo) {
+            return base.Channel.HistorialGruposProfesor(correo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> HistorialGruposProfesorAsync(string token) {
-            return base.Channel.HistorialGruposProfesorAsync(token);
+        public System.Threading.Tasks.Task<System.Data.DataTable> HistorialGruposProfesorAsync(string correo) {
+            return base.Channel.HistorialGruposProfesorAsync(correo);
         }
         
-        public System.Data.DataSet EstudiantesEnGrupo(int codigoGrupo, string token) {
-            return base.Channel.EstudiantesEnGrupo(codigoGrupo, token);
+        public System.Data.DataTable EstudiantesEnGrupo(int codigoGrupo) {
+            return base.Channel.EstudiantesEnGrupo(codigoGrupo);
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> EstudiantesEnGrupoAsync(int codigoGrupo, string token) {
-            return base.Channel.EstudiantesEnGrupoAsync(codigoGrupo, token);
+        public System.Threading.Tasks.Task<System.Data.DataTable> EstudiantesEnGrupoAsync(int codigoGrupo) {
+            return base.Channel.EstudiantesEnGrupoAsync(codigoGrupo);
         }
         
-        public int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios, string token) {
-            return base.Channel.ActualizarNota(codigoGrupo, emailEstudiante, nota, estado, comentarios, token);
+        public int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios) {
+            return base.Channel.ActualizarNota(codigoGrupo, emailEstudiante, nota, estado, comentarios);
         }
         
-        public System.Threading.Tasks.Task<int> ActualizarNotaAsync(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios, string token) {
-            return base.Channel.ActualizarNotaAsync(codigoGrupo, emailEstudiante, nota, estado, comentarios, token);
+        public System.Threading.Tasks.Task<int> ActualizarNotaAsync(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios) {
+            return base.Channel.ActualizarNotaAsync(codigoGrupo, emailEstudiante, nota, estado, comentarios);
         }
         
-        public int MatricularCarrera(int codigoCarrera, string token) {
-            return base.Channel.MatricularCarrera(codigoCarrera, token);
+        public int MatricularCarrera(int codigoCarrera, string correo) {
+            return base.Channel.MatricularCarrera(codigoCarrera, correo);
         }
         
-        public System.Threading.Tasks.Task<int> MatricularCarreraAsync(int codigoCarrera, string token) {
-            return base.Channel.MatricularCarreraAsync(codigoCarrera, token);
+        public System.Threading.Tasks.Task<int> MatricularCarreraAsync(int codigoCarrera, string correo) {
+            return base.Channel.MatricularCarreraAsync(codigoCarrera, correo);
         }
         
-        public System.Data.DataSet ListarCarreras() {
+        public System.Data.DataTable ListarCarreras() {
             return base.Channel.ListarCarreras();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataSet> ListarCarrerasAsync() {
+        public System.Threading.Tasks.Task<System.Data.DataTable> ListarCarrerasAsync() {
             return base.Channel.ListarCarrerasAsync();
         }
     }

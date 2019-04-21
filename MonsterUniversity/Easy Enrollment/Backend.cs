@@ -16,43 +16,9 @@ namespace Easy_Enrollment
         private string Token = "";
         private string Correo = "";
 
-        public int Login(string email, string password)
-        {
-            Token = WebService.Login(email, password);
-            //Token = WebService.Login(email, GetHashString(password));
-            try
-            {
-                RolId = Int32.Parse(Token.Substring(0, 1));
-                Correo = Token.Substring(1);
-                return RolId;
-            }
-            catch( Exception ex)
-            {
-                return -1;
-            }
-            
 
-        }
+        
 
-        public DataSet CursosMatricular()
-        {
-            return WebService.CursosMatricular(Token);
-        }
-
-        public DataSet SelectUsuario()
-        {
-            return WebService.SelectUsuario(Token);
-        }
-
-        public DataSet CodigosPostales()
-        {
-            return WebService.CodigosPostales();
-        }
-
-        public DataSet GruposDeCurso(int idCurso, string codigoPeriodo)
-        {
-            return WebService.GruposDeCurso(idCurso, codigoPeriodo);
-        }
 
         public int RegistrarDireccion(int codigoPostal, string detalle)
         {
@@ -80,26 +46,15 @@ namespace Easy_Enrollment
             return WebService.MatricularGrupo(codigoGrupo, Token);
         }
 
-        public DataSet HistorialCursos()
-        {
-            return WebService.HistorialCursos(Token);
-        }
-
-        public DataSet HistorialCursosProfesor()
-        {
-            return WebService.HistorialGruposProfesor(Token);
-        }
+ 
 
         public int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios)
         {
             //no funciona correctamente el codigo de retorno, pero si se cambia en la base
-            return WebService.ActualizarNota(codigoGrupo, emailEstudiante, nota, estado, comentarios, Token);
+            return WebService.ActualizarNota(codigoGrupo, emailEstudiante, nota, estado, comentarios);
         }
 
-        public DataSet EstudiantesEnGrupo(int codigoGrupo)
-        {
-            return WebService.EstudiantesEnGrupo(codigoGrupo, Token);
-        }
+ 
 
         private static byte[] GetHash(string inputString)
         {

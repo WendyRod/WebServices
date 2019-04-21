@@ -13,8 +13,8 @@
             width: 100%;
         }
         .auto-style4 {
-            width: 323px;
-            height: 264px;
+            width: 165px;
+            height: 119px;
         }
         .auto-style5 {
             text-align: center;

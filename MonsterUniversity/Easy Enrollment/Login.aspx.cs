@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -9,9 +10,21 @@ namespace Easy_Enrollment
 {
     public partial class Login : System.Web.UI.Page
     {
+        private MatriculaWSReference.ServicioWebSoapClient WebService = new MatriculaWSReference.ServicioWebSoapClient();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             LabelRespuesta.Text = "";
+            Session.Contents.Remove("Login");
+            FormsAuthentication.SignOut();
+            Session.Timeout = 1;
+
+            if (!IsPostBack)
+            {
+                Response.Cache.SetCacheability(HttpCacheability.ServerAndNoCache);
+                Response.Cache.SetAllowResponseInBrowserHistory(false);
+                Response.Cache.SetNoStore();
+            }
         }
 
 
@@ -24,14 +37,20 @@ namespace Easy_Enrollment
                 var addr = new System.Net.Mail.MailAddress(email);
                 if (addr.Address == email)
                 {
-                    Backend backend = new Backend();
-                    int res = backend.Login(email, Pass.Text.Trim());
+                    
+                    int res = WebService.Login(email, Pass.Text.Trim());
                     switch (res)
                     {
                         case 2:
+                            Session["Email"] = email;
+                            Session["Login"] = true;
+                            Session.Timeout = 10;
                             Response.Redirect("Home_Profesores.aspx");
                             break;
                         case 3:
+                            Session["Email"] = email;
+                            Session["Login"] = "YES";
+                            Session.Timeout = 10;
                             Response.Redirect("Home_Estudiante.aspx");
                             break;
                         default:
@@ -50,7 +69,8 @@ namespace Easy_Enrollment
                 LabelRespuesta.Text = "Correo incorrecto.";
             }
 
-
+            Session["Login"] = false;
+            Session.Timeout = 1;
 
         }
 

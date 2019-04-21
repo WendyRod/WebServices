@@ -13,7 +13,7 @@
       <s:element name="LoginResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -42,7 +42,7 @@
       <s:element name="SelectUsuario">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -52,8 +52,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="SelectUsuarioResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -63,7 +63,7 @@
       <s:element name="CursosMatricular">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -73,8 +73,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="CursosMatricularResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -95,11 +95,25 @@
             <s:element minOccurs="0" maxOccurs="1" name="GruposDeCursoResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HorarioGrupo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idGrupo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HorarioGrupoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HorarioGrupoResult" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -127,8 +141,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="CodigosPostalesResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -139,7 +153,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="codigoGrupo" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -153,7 +167,7 @@
       <s:element name="HistorialCursos">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -163,8 +177,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="HistorialCursosResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -174,7 +188,7 @@
       <s:element name="HistorialGruposProfesor">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -184,8 +198,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="HistorialGruposProfesorResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -196,7 +210,6 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="codigoGrupo" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -206,8 +219,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="EstudiantesEnGrupoResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -222,7 +235,6 @@
             <s:element minOccurs="1" maxOccurs="1" name="nota" type="s:int" />
             <s:element minOccurs="0" maxOccurs="1" name="estado" type="s:string" />
             <s:element minOccurs="0" maxOccurs="1" name="comentarios" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -237,7 +249,7 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="codigoCarrera" type="s:int" />
-            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="correo" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -257,8 +269,8 @@
             <s:element minOccurs="0" maxOccurs="1" name="ListarCarrerasResult">
               <s:complexType>
                 <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -296,6 +308,12 @@
   </wsdl:message>
   <wsdl:message name="GruposDeCursoSoapOut">
     <wsdl:part name="parameters" element="tns:GruposDeCursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="HorarioGrupoSoapIn">
+    <wsdl:part name="parameters" element="tns:HorarioGrupo" />
+  </wsdl:message>
+  <wsdl:message name="HorarioGrupoSoapOut">
+    <wsdl:part name="parameters" element="tns:HorarioGrupoResponse" />
   </wsdl:message>
   <wsdl:message name="RegistrarDireccionSoapIn">
     <wsdl:part name="parameters" element="tns:RegistrarDireccion" />
@@ -371,6 +389,10 @@
     <wsdl:operation name="GruposDeCurso">
       <wsdl:input message="tns:GruposDeCursoSoapIn" />
       <wsdl:output message="tns:GruposDeCursoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HorarioGrupo">
+      <wsdl:input message="tns:HorarioGrupoSoapIn" />
+      <wsdl:output message="tns:HorarioGrupoSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="RegistrarDireccion">
       <wsdl:input message="tns:RegistrarDireccionSoapIn" />
@@ -449,6 +471,15 @@
     </wsdl:operation>
     <wsdl:operation name="GruposDeCurso">
       <soap:operation soapAction="http://tempuri.org/GruposDeCurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorarioGrupo">
+      <soap:operation soapAction="http://tempuri.org/HorarioGrupo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -578,6 +609,15 @@
     </wsdl:operation>
     <wsdl:operation name="GruposDeCurso">
       <soap12:operation soapAction="http://tempuri.org/GruposDeCurso" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HorarioGrupo">
+      <soap12:operation soapAction="http://tempuri.org/HorarioGrupo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

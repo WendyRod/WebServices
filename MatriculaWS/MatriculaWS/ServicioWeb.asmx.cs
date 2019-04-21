@@ -21,63 +21,13 @@ namespace MatriculaWS
     public class ServicioWeb : System.Web.Services.WebService
     {
         private readonly string ConnectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog = Matricula; Integrated Security = True";
+
         private SqlConnection Conn = null;
 
-
-        private string[] Salt( string passwordHashed)
-        {
-            byte[] salt;
-            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
-
-            string Salt = salt.ToString();
-
-            var pbkdf2 = new Rfc2898DeriveBytes(passwordHashed, salt, 1000);
-
-
-            return new string[2]{ salt.ToString(), pbkdf2.ToString()};
-        }
-
-
-        private static byte[] GetHash(string inputString)
-        {
-            HashAlgorithm algorithm = SHA256.Create();
-            return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
-        }
-
-        private static string GetHashString(string inputString)
-        {
-            StringBuilder sb = new StringBuilder();
-            foreach (byte b in GetHash(inputString))
-                sb.Append(b.ToString("X2"));
-
-            return sb.ToString();
-        }
-
-        private static string DumpDataTable(DataTable table)
-        {
-            string data = string.Empty;
-            StringBuilder sb = new StringBuilder();
-
-            if (null != table && null != table.Rows)
-            {
-                foreach (DataRow dataRow in table.Rows)
-                {
-                    foreach (var item in dataRow.ItemArray)
-                    {
-                        sb.Append(item);
-                        sb.Append(',');
-                    }
-                    sb.AppendLine();
-                }
-
-                data = sb.ToString();
-            }
-            return data;
-        }
-
+        
 
         [WebMethod]
-        public string Login(string correo, string passwordhashed)
+        public int Login(string correo, string passwordhashed)
         {
 
             if (Conn == null)
@@ -97,17 +47,19 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            string rol = null;
+
             try
             {
-                rol = ds.Tables[0].Rows[0]["Id_Rol"].ToString();
+                return Int32.Parse(ds.Tables[0].Rows[0]["Id_Rol"].ToString());
+            
             }
             catch (Exception ex)
             {
-                rol = "0";
-                return "Correo o contraseña incorrectos.";
+                //"Correo o contraseña incorrectos."
+                return -1;
             }
-            return createToken(rol, correo);
+            
+            //return createToken(rol, correo);
         }
 
         [WebMethod]
@@ -151,9 +103,9 @@ namespace MatriculaWS
         }
 
         [WebMethod]
-        public DataSet SelectUsuario(string token)
+        public DataTable SelectUsuario(string correo)
         {
-            string correo = ValidateToken(token)[1];
+            //string correo = ValidateToken(token)[1];
 
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -171,13 +123,13 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
 
         [WebMethod]
-        public DataSet CursosMatricular(string token)
+        public DataTable CursosMatricular(string correo)
         {
-            string correo = ValidateToken(token)[1];
+            //string correo = ValidateToken(token)[1];
 
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -195,11 +147,11 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
 
         [WebMethod]
-        public DataSet GruposDeCurso(int idCurso, string codigoPeriodo)
+        public DataTable GruposDeCurso(int idCurso, string codigoPeriodo)
         {
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -218,7 +170,31 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
+        }
+
+    
+        [WebMethod]
+        public string HorarioGrupo(int idGrupo)
+        {
+            if (Conn == null)
+                Conn = new SqlConnection(ConnectionString);
+
+            DataSet ds = new DataSet();
+
+            using (SqlCommand cmd = new SqlCommand("HORARIO_GRUPO", Conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@pCodigoGrupo", SqlDbType.Int).Value = idGrupo;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(ds);
+                Conn.Open();
+                cmd.ExecuteNonQuery();
+                Conn.Close();
+            }
+            return DumpDataTable(ds.Tables[0]);
         }
 
         [WebMethod]
@@ -251,7 +227,7 @@ namespace MatriculaWS
         }
 
         [WebMethod]
-        public DataSet CodigosPostales()
+        public DataTable CodigosPostales()
         {
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -267,13 +243,13 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
     
         [WebMethod]
-        public int MatricularGrupo(int codigoGrupo, string token)
+        public int MatricularGrupo(int codigoGrupo, string correo)
         {
-            string correo = ValidateToken(token)[1];
+            //string correo = ValidateToken(token)[1];
 
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -302,9 +278,9 @@ namespace MatriculaWS
         }
 
         [WebMethod]
-        public DataSet HistorialCursos(string token)
+        public DataTable HistorialCursos(string correo)
         {
-            string correo = ValidateToken(token)[1];
+            //string correo = ValidateToken(token)[1];
 
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -322,14 +298,14 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
 
         [WebMethod]
-        public DataSet HistorialGruposProfesor(string token)
+        public DataTable HistorialGruposProfesor(string correo)
         {
             
-            string correo = ValidateToken(token)[1];
+            //string correo = ValidateToken(token)[1];
 
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -347,11 +323,11 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
 
         [WebMethod]
-        public DataSet EstudiantesEnGrupo(int codigoGrupo, string token)
+        public DataTable EstudiantesEnGrupo(int codigoGrupo)
         {
       
             if (Conn == null)
@@ -370,11 +346,11 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
 
         [WebMethod]
-        public int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios, string token)
+        public int ActualizarNota(int codigoGrupo, string emailEstudiante, int nota, string estado, string comentarios)
         {
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -408,9 +384,9 @@ namespace MatriculaWS
         }
 
         [WebMethod]
-        public int MatricularCarrera(int codigoCarrera, string token)
+        public int MatricularCarrera(int codigoCarrera, string correo)
         {
-            string correo = ValidateToken(token)[1];
+            //string correo = ValidateToken(token)[1];
 
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -439,7 +415,7 @@ namespace MatriculaWS
         }
 
         [WebMethod]
-        public DataSet ListarCarreras()
+        public DataTable ListarCarreras()
         {
             if (Conn == null)
                 Conn = new SqlConnection(ConnectionString);
@@ -456,14 +432,15 @@ namespace MatriculaWS
                 cmd.ExecuteNonQuery();
                 Conn.Close();
             }
-            return ds;
+            return ds.Tables[0];
         }
 
 
-
+        /*
         private string createToken(string rolId, string correo)
         {
             //aqui va el manejo de sesion y tokens
+
 
             return rolId + correo;
         }
@@ -478,7 +455,58 @@ namespace MatriculaWS
             return new string[2] { validacion, correo };
         }
 
+        
+        private string[] Salt( string passwordHashed)
+        {
+            byte[] salt;
+            new RNGCryptoServiceProvider().GetBytes(salt = new byte[16]);
 
+            string Salt = salt.ToString();
+
+            var pbkdf2 = new Rfc2898DeriveBytes(passwordHashed, salt, 1000);
+
+
+            return new string[2]{ salt.ToString(), pbkdf2.ToString()};
+        }
+
+
+        private static byte[] GetHash(string inputString)
+        {
+            HashAlgorithm algorithm = SHA256.Create();
+            return algorithm.ComputeHash(Encoding.UTF8.GetBytes(inputString));
+        }
+        
+        private static string GetHashString(string inputString)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (byte b in GetHash(inputString))
+                sb.Append(b.ToString("X2"));
+
+            return sb.ToString();
+        }
+        */
+        private static string DumpDataTable(DataTable table)
+        {
+            string data = string.Empty;
+            StringBuilder sb = new StringBuilder();
+
+            if (null != table && null != table.Rows)
+            {
+                foreach (DataRow dataRow in table.Rows)
+                {
+                    foreach (var item in dataRow.ItemArray)
+                    {
+                        sb.Append(item);
+                        sb.Append(" - ");
+                    }
+                    sb.AppendLine();
+                }
+
+                data = sb.ToString();
+            }
+            return data;
+        }
+        
 
     }
 }

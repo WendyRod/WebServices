@@ -35,7 +35,7 @@ Inherits="Easy_Enrollment.Login" %>
               <asp:TextBox id="Pass" type="Password" runat="server" />
               <span class="i i-warning"></span>
             </p>
-              <asp:Label ID="LabelRespuesta" runat="server" Text="Label"></asp:Label>
+              <asp:Label ID="LabelRespuesta" runat="server" ForeColor="Red"></asp:Label>
             <asp:Button
               id="Ingresar"
               runat="server"
