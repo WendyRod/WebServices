@@ -12,7 +12,7 @@
             <asp:Label ID="Label1" runat="server" Font-Size="20pt" Text="Cursos"></asp:Label>
             <br />
             <br __designer:mapid="260" />
-            <asp:ListBox ID="ListBox_Courses" runat="server" AutoPostBack="True" Rows="8" Width="170px"></asp:ListBox>
+            <asp:ListBox ID="ListBox_Courses" runat="server" AutoPostBack="True" Rows="8" Width="247px" Height="169px"></asp:ListBox>
             <br />
             <br />
             <br />
@@ -24,7 +24,7 @@
             <asp:Label ID="Label2" runat="server" Font-Size="20pt" Text="Grupos para el curso"></asp:Label>
                 <br />
             <br __designer:mapid="264" />
-            <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="184px" OnSelectedIndexChanged="GroupSelected"></asp:ListBox>
+            <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="247px" OnSelectedIndexChanged="GroupSelected" Height="169px"></asp:ListBox>
             <br />
             <br />
             <br />

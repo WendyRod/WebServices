@@ -38,7 +38,7 @@
                     </td>
                 </tr>
             </table>
-            <div class="auto-style7">
+         <%--   <div class="auto-style7">--%>
                 <asp:Button ID="Inicio" runat="server" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style6" Height="43px" Width="74px" />
 &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Historial" runat="server" ForeColor="#206BA4" Text="Historial" CssClass="auto-style6" OnClick="Historial_Click" Height="44px" Width="102px" />
@@ -49,12 +49,14 @@
 &nbsp;&nbsp;&nbsp;
                 <asp:Button ID="Salir" runat="server" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style6" Height="44px" Width="61px" />
             </div>
-        </div>
+        <%--</div>--%>
     
 
         <div>
+            <asp:ContentPlaceHolder ID="head" runat="server">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+                </asp:ContentPlaceHolder>
             </div>
 
     </form>
