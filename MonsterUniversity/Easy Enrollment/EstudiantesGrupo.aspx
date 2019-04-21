@@ -10,12 +10,17 @@
         .auto-style8 {
             text-align: center;
             height: 46px;
-            width: 288px;
+            width: 340px;
         }
         .auto-style9 {
-            width: 59%;
+            width: 71%;
             height: 318px;
-            margin-left: 346px;
+            margin-left: 224px;
+        }
+        .auto-style10 {
+            text-align: center;
+            height: 46px;
+            width: 415px;
         }
     </style>
 
@@ -25,13 +30,13 @@
             <asp:Label ID="Label2" runat="server" Font-Size="20pt" Text="Cursos"></asp:Label>
             <br />
             <br />
-            <asp:DropDownList ID="Cursos" runat="server">
+            <asp:DropDownList ID="Cursos" runat="server" Height="53px" Width="226px">
             </asp:DropDownList>
         </td>
         <br/>
         <br/>
         <br/>
-        <td style="text-align: center" __designer:mapid="25f" class="auto-style7">
+        <td style="text-align: center" __designer:mapid="25f" class="auto-style10">
             <asp:Label ID="Label1" runat="server" Font-Size="20pt" Text="Grupos para el curso"></asp:Label>
             <br />
             <br __designer:mapid="264" />
