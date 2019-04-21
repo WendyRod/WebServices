@@ -1,21 +1,29 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home-Prof.Master" AutoEventWireup="true" CodeFile="EstudiantesGrupo.aspx.cs" Inherits="Easy_Enrollment.EstudiantesGrupo" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Home-Prof.Master" AutoEventWireup="true" CodeFile="EstudiantesGrupo.aspx.cs" Inherits="Easy_Enrollment.EstudiantesGrupo" %>
 
 
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server" >
 
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Panel ID="Panel3" runat="server" Height="242px" Width="856px">
-
-        <style type="text/css">
+    <style type="text/css">
         .auto-style7 {
             width: 300px;
         }
+        .auto-style8 {
+            text-align: center;
+            height: 46px;
+            width: 288px;
+        }
+        .auto-style9 {
+            width: 59%;
+            height: 318px;
+            margin-left: 346px;
+        }
     </style>
 
-    <table style="width:100%;" __designer:mapid="25d">
+    <table __designer:mapid="25d" class="auto-style9">
     <tr __designer:mapid="25e">
-        <td style="text-align: center" __designer:mapid="25f" class="auto-style7">Cursos:<br __designer:mapid="260" />
+        <td style="text-align: center" __designer:mapid="25f" class="auto-style8">
+            <asp:Label ID="Label2" runat="server" Font-Size="20pt" Text="Cursos"></asp:Label>
+            <br />
             <br />
             <asp:DropDownList ID="Cursos" runat="server">
             </asp:DropDownList>
@@ -23,13 +31,12 @@
         <br/>
         <br/>
         <br/>
-        <td style="text-align: center" __designer:mapid="25f" class="auto-style7">Grupos para el curso:
-                <asp:Label ID="Label_Course_Name" runat="server" Text="_______"></asp:Label>
+        <td style="text-align: center" __designer:mapid="25f" class="auto-style7">
+            <asp:Label ID="Label1" runat="server" Font-Size="20pt" Text="Grupos para el curso"></asp:Label>
+            <br />
             <br __designer:mapid="264" />
-            <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="184px" OnSelectedIndexChanged="GroupSelected"></asp:ListBox>
+            <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="264px" OnSelectedIndexChanged="GroupSelected" Height="164px"></asp:ListBox>
          </td>
     </tr>
 </table>
-        </asp:Panel>
 </asp:Content>
-

@@ -18,7 +18,11 @@
             text-align: center;
         }
         .auto-style6 {
-            font-size: medium;
+            font-size: 22px;
+        }
+        .auto-style7 {
+            text-align: center;
+            height: 46px;
         }
         </style>
 </head>
@@ -34,16 +38,16 @@
                     </td>
                 </tr>
             </table>
-            <div class="auto-style5">
-                <asp:Button ID="Inicio" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style6" />
+            <div class="auto-style7">
+                <asp:Button ID="Inicio" runat="server" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style6" Height="43px" Width="74px" />
 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Historial" runat="server" BackColor="White" ForeColor="#206BA4" Text="Historial" CssClass="auto-style6" OnClick="Historial_Click" />
+                <asp:Button ID="Historial" runat="server" ForeColor="#206BA4" Text="Historial" CssClass="auto-style6" OnClick="Historial_Click" Height="44px" Width="102px" />
 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Estudiante" runat="server" BackColor="White" ForeColor="#206BA4" Text="Estudiantes" CssClass="auto-style6" OnClick="Estudiante_Click" />
+                <asp:Button ID="Estudiante" runat="server" ForeColor="#206BA4" Text="Estudiantes" CssClass="auto-style6" OnClick="Estudiante_Click" Height="43px" Width="137px" />
 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Actualizar_Nota" runat="server" BackColor="White" ForeColor="#206BA4" Text="Actualiza Notas" CssClass="auto-style6" OnClick="Actualizar_Nota_Click" />
+                <asp:Button ID="Actualizar_Nota" runat="server" ForeColor="#206BA4" Text="Actualiza Notas" CssClass="auto-style6" OnClick="Actualizar_Nota_Click" Height="44px" Width="165px" />
 &nbsp;&nbsp;&nbsp;
-                <asp:Button ID="Salir" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style6" />
+                <asp:Button ID="Salir" runat="server" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style6" Height="44px" Width="61px" />
             </div>
         </div>
     

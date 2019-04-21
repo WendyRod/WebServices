@@ -78,7 +78,6 @@
     </None>
     <Content Include="ActualizarNota.aspx" />
     <Content Include="css\Login.css" />
-    <Content Include="css\Registro_Usuario.css" />
     <Content Include="Cursos_Matricular.aspx" />
     <Content Include="Cursos_Profesor.aspx" />
     <Content Include="EstudiantesGrupo.aspx" />
