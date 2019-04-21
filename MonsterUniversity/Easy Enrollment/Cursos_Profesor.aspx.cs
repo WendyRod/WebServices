@@ -18,9 +18,11 @@ namespace Easy_Enrollment
         {
             
         }
-        protected void GroupSelected(object sender, EventArgs e)
+
+
+        protected void Button_Enroll_Click(object sender, EventArgs e)
         {
-            
+
 
         }
     }

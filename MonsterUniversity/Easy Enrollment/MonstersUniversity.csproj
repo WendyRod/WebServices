@@ -69,15 +69,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\MatriculaWSReference\ServicioWeb.disco" />
     <None Include="Connected Services\MatriculaWSReference\configuration91.svcinfo" />
     <None Include="Connected Services\MatriculaWSReference\configuration.svcinfo" />
     <None Include="Connected Services\MatriculaWSReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\MatriculaWSReference\ServicioWeb.disco" />
+    <Content Include="ActualizarNota.aspx" />
     <Content Include="css\Login.css" />
-    <Content Include="css\Registro_Usuario.css" />
     <Content Include="Cursos_Matricular.aspx" />
     <Content Include="Cursos_Profesor.aspx" />
     <Content Include="EstudiantesGrupo.aspx" />
@@ -92,6 +92,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarNota.aspx.cs">
+      <DependentUpon>ActualizarNota.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarNota.aspx.designer.cs">
+      <DependentUpon>ActualizarNota.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Backend.cs" />
     <Compile Include="Connected Services\MatriculaWSReference\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -169,7 +176,6 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Home-Estu.Master" />
@@ -177,8 +183,6 @@
     <None Include="Connected Services\MatriculaWSReference\ServicioWeb.wsdl" />
     <None Include="packages.config" />
     <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
-    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
-    <None Include="Properties\PublishProfiles\matriculaapp - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
