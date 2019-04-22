@@ -19,31 +19,31 @@
                 <asp:ListBox ID="ListBox_Groups" runat="server" AutoPostBack="True" Rows="8" Width="170px" OnSelectedIndexChanged="GroupSelected"></asp:ListBox>
             </td>
             <td style="text-align: center; width: 705px;">Curso:
-                <asp:Label ID="Label_Course_Name2" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_Course_Name2" runat="server"></asp:Label>
                 <br />
                 Créditos:
-                <asp:Label ID="Label_creditos" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_creditos" runat="server"></asp:Label>
                 <br />
                 Descripción:
-                <asp:Label ID="Label_descripcion" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_descripcion" runat="server"></asp:Label>
                 <br />
                 Costo:
-                <asp:Label ID="Label_costo" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_costo" runat="server"></asp:Label>
                 <br />
                 Grupo:
-                <asp:Label ID="Label_Group_Name" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_Group_Name" runat="server"></asp:Label>
                 <br />
                 Profesor:
                 <asp:Label ID="Label_Professor_Name" runat="server" Text="Not assigned."></asp:Label>
                 <br />
                 Aula:
-                <asp:Label ID="Label_Aula" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_Aula" runat="server"></asp:Label>
                 <br />
                 Lugares Disponibles:
                 <asp:Label ID="Label_Open_Places" runat="server" Text="0"></asp:Label>
                 <br />
                 Horario:
-                <asp:Label ID="Label_horario" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="Label_horario" runat="server"></asp:Label>
                 <br />
                 <br />
                 <asp:Button ID="Matricular_Curso" runat="server" OnClick="Matricular" Text="Matricular" ForeColor="#206BA4" Font-Size="15pt"/>
