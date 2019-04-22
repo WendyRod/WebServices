@@ -19,6 +19,8 @@
         }
         .auto-style5 {
             text-align: center;
+            font-size:20px;
+            color:#206BA4;
         }
         .auto-style6 {
             font-size: medium;
@@ -77,7 +79,7 @@
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>&nbsp;Correo:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TextBox_Correo" runat="server" ForeColor="#206BA4"></asp:TextBox>
+                        <asp:TextBox ID="TextBox_Correo" TextMode="Email" runat="server" ForeColor="#206BA4"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rqCorreo" runat="server" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Correo"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -110,7 +112,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="color: #206BA4"><strong>Celular:&nbsp; </strong> </td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Teléfono:&nbsp; </strong> </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Celular" runat="server" ForeColor="#206BA4"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rqCelular" runat="server" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Celular"></asp:RequiredFieldValidator>
@@ -125,8 +127,7 @@
                         Dirección&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        País:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>País:&nbsp; </strong> </td>
                     <td class="auto-style4" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Pais" runat="server" CssClass="auto-style7" Height="16px" Width="140px">
                         </asp:DropDownList>
@@ -134,8 +135,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Provincia:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Provincia:&nbsp; </strong> </td>
                     <td class="auto-style4" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Provincia" runat="server" AutoPostBack="True" Height="17px" OnSelectedIndexChanged="DropDownList_Provincia_SelectedIndexChanged" Width="140px">
                         </asp:DropDownList>
@@ -143,8 +143,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Cantón:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Cantón:&nbsp; </strong> </td>
                     <td class="auto-style4" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Canton" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_Canton_SelectedIndexChanged" Width="140px">
                         </asp:DropDownList>
@@ -152,8 +151,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">
-                        Distrito:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Distrito:&nbsp; </strong> </td>
                     <td class="auto-style12" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Distrito" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_Distrito_SelectedIndexChanged" Width="140px">
                         </asp:DropDownList>
@@ -161,10 +159,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Dirección exacta:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Dirección exacta:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <textarea id="TextArea_Direccion" class="auto-style13" name="S1" rows="2"></textarea>
+                        <textarea runat="server" id="TextArea_Direccion" class="auto-style13" name="S1" rows="2"></textarea>
                         <asp:RequiredFieldValidator ID="rqDireccion" runat="server" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextArea_Direccion"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
@@ -175,8 +172,7 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Tipo Usuario:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Tipo Usuario:&nbsp; </strong> </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="DropDownList_Tipos_Usuario" runat="server" Height="16px" Width="140px">
                         </asp:DropDownList>
@@ -190,17 +186,15 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Contraseña</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Contraseña:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <input id="Password" type="password" /></td>
+                        <input runat="server" id="Password" type="password" /></td>
                     <asp:RequiredFieldValidator ID="rqPassword" runat="server" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="Password"></asp:RequiredFieldValidator>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Verificar contraseña:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Verificar contraseña:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <input id="Password_Confirm" type="password" /></td>
+                        <input runat="server" id="Password_Confirm" type="password" /></td>
                     <asp:RequiredFieldValidator ID="rqConfirmPassword" runat="server" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="Password_Confirm"></asp:RequiredFieldValidator>
                 </tr>
                 <tr>
