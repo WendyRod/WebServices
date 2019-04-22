@@ -13,37 +13,39 @@
             width: 100%;
         }
         .auto-style4 {
-            width: 138px;
-            height: 93px;
+            width: 177px;
+            height: 140px;
         }
-        .auto-style6 {
-            height: 147px;
-        }
-        .auto-style7 {
-            font-size: 22px;
+        .auto-style5 {
+            font-size: medium;
+            height: 28px;
         }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="font-family: 'Arial Black'; font-size: x-large; font-weight: normal; font-style: normal; font-variant: normal; color: #FFFFFF; text-align: center; word-spacing: normal; background-color: #206BA4; background-image: none" class="auto-style6">
+        <div style="font-family: 'Arial Black'; font-size: x-large; font-weight: normal; font-style: normal; font-variant: normal; color: #FFFFFF; text-align: center; word-spacing: normal; background-color: #206BA4; background-image: none">
             <table class="auto-style1">
                 <tr>
                     <td style="background-color: #FFFFFF">
+                        <br />
                         <img class="auto-style4" src="images/monsters-university-logo-272139423B-seeklogo.com.png" /><br />
+                        <br />
                     </td>
                 </tr>
             </table>
-            <asp:Button ID="Inicio" runat="server" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style7" Height="42px" Width="87px" />
+            <asp:Button ID="Inicio" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Inicio_Click" Text="Inicio" CssClass="auto-style5" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Historial" runat="server" ForeColor="#206BA4" OnClick="Historial_Click" Text="Historial" CssClass="auto-style7" Height="41px" />
+            <asp:Button ID="Historial" runat="server" BackColor="White" ForeColor="#206BA4" Text="Historial" CssClass="auto-style5" OnClick="Historial_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Matricular" runat="server" ForeColor="#206BA4" OnClick="Matricular_Click" Text="Matricular" CssClass="auto-style7" Height="41px" />
-
-
+            <asp:Button ID="Matricular" runat="server" BackColor="White" ForeColor="#206BA4" Text="Matricular" CssClass="auto-style5" OnClick="Matricular_Click" />
 &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="Salir" runat="server" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style7" Height="41px" Width="69px" />
+            <asp:Button ID="Salir" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style5" />
             <br />
+        </div>
+    
+    
+        <div>
             <asp:ContentPlaceHolder ID="head" runat="server">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
