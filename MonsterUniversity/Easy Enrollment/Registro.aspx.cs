@@ -10,7 +10,6 @@ namespace Easy_Enrollment
 {
     public partial class Registro : System.Web.UI.Page
     {
-
         private MatriculaWSReference.ServicioWebSoapClient WebService = new MatriculaWSReference.ServicioWebSoapClient();
         //DataTable direcciones;
 
@@ -137,6 +136,8 @@ namespace Easy_Enrollment
         protected void Aceptar_Click(object sender, EventArgs e)
         {
             //Validar todos los campos
+            //Validar();
+
             string nombre = TextBox_Nombre.Text.Trim();
             string apellido1 = TextBox_Apellido1.Text.Trim();
             string apellido2 = TextBox_Apellido2.Text.Trim();
@@ -169,6 +170,25 @@ namespace Easy_Enrollment
         }
 
 
+
+        //private void Validar()
+        //{
+
+        //    string nombre = TextBox_Nombre.Text;
+        //    //string apellido1 = TextBox_Apellido1.Text;
+        //    //string apellido2 = TextBox_Apellido2.Text;
+        //    //string cedula = TextBox_Cedula.Text;
+        //    //string correo = TextBox_Correo.Text;
+        //    //string celular = TextBox_Celular.Text;
+        //    //string passwordHashed = Password.Value;
+        //    //int idRol = Int32.Parse(DropDownList_Tipos_Usuario.SelectedValue);
+
+
+        //    if (nombre.Equals("")) {
+        //        System.Windows.Forms.MessageBox.Equals("Debe de llenar todos los campos");
+        //    }
+
+        //}
 
     }
 }

@@ -19,6 +19,7 @@
         }
         .auto-style5 {
             text-align: center;
+            font-size:20px;
         }
         .auto-style6 {
             font-size: medium;
@@ -48,6 +49,11 @@
         }
         .auto-style13 {
             width: 270px;
+        }
+        .auto-style14 {
+            text-align: center;
+            font-size: 20px;
+            height: 26px;
         }
     </style>
 </head>
@@ -99,13 +105,13 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="color: #206BA4"><strong>Cedula:&nbsp; </strong> </td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Cédula:&nbsp; </strong> </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Cedula" runat="server" ForeColor="#206BA4"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="color: #206BA4"><strong>Celular:&nbsp; </strong> </td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Teléfono:&nbsp; </strong> </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Celular" runat="server" ForeColor="#206BA4"></asp:TextBox>
                     </td>
@@ -115,46 +121,42 @@
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="auto-style5">
-                        Dirección&nbsp;</td>
+                    <td colspan="2" class="auto-style14">
+                        Dirección&nbsp;<br />
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        País:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>País:&nbsp; </strong> </td>
                     <td class="auto-style4" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Pais" runat="server" CssClass="auto-style7" Height="16px" Width="140px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Provincia:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Provincia:&nbsp; </strong> </td>
                     <td class="auto-style4" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Provincia" runat="server" AutoPostBack="True" Height="17px" OnSelectedIndexChanged="DropDownList_Provincia_SelectedIndexChanged" Width="140px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Cantón:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Cantón:&nbsp; </strong> </td>
                     <td class="auto-style4" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Canton" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_Canton_SelectedIndexChanged" Width="140px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style11">
-                        Distrito:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Distrito:&nbsp; </strong> </td>
                     <td class="auto-style12" aria-multiselectable="False">
                         <asp:DropDownList ID="DropDownList_Distrito" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList_Distrito_SelectedIndexChanged" Width="140px">
                         </asp:DropDownList>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Dirección exacta:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Dirección exacta:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <textarea id="TextArea_Direccion" class="auto-style13" name="S1" rows="2"></textarea></td>
+                        <textarea id="TextArea_Direccion" class="auto-style13" name="S1" rows="2" aria-required="True"></textarea></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
@@ -163,9 +165,8 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Tipo Usuario:</td>
-                    <td class="auto-style4">
+                    <td class="auto-style11" style="color: #206BA4"><strong>Tipo Usuario:&nbsp; </strong> </td>
+                    <td class="auto-style12">
                         <asp:DropDownList ID="DropDownList_Tipos_Usuario" runat="server" Height="16px" Width="140px">
                         </asp:DropDownList>
                     </td>
@@ -177,16 +178,14 @@
                         &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Contraseña</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Contraseña:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <input id="Password" type="password" /></td>
+                        <input id="Password" type="password" maxlength="12" min="8" required="required" /></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
-                        Verificar contraseña:</td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Verificar contraseña:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <input id="Password_Confirm" type="password" /></td>
+                        <input id="Password_Confirm" type="password" maxlength="12" min="8" required="required" /></td>
                 </tr>
                 <tr>
                     <td colspan="2" class="auto-style5">
