@@ -99,7 +99,6 @@
     <Compile Include="ActualizarNota.aspx.designer.cs">
       <DependentUpon>ActualizarNota.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Backend.cs" />
     <Compile Include="Connected Services\MatriculaWSReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
