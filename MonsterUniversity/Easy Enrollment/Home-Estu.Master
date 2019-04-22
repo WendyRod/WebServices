@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
-    
+  
     <style type="text/css">
 
 
@@ -13,12 +13,14 @@
             width: 100%;
         }
         .auto-style4 {
-            width: 177px;
-            height: 140px;
+            width: 269px;
+            height: 220px;
         }
         .auto-style5 {
             font-size: medium;
-            height: 28px;
+        }
+        .auto-style6 {
+            font-size: xx-small;
         }
         </style>
 </head>
@@ -28,9 +30,9 @@
             <table class="auto-style1">
                 <tr>
                     <td style="background-color: #FFFFFF">
-                        <br />
+                        <span class="auto-style6">v</span><br />
                         <img class="auto-style4" src="images/monsters-university-logo-272139423B-seeklogo.com.png" /><br />
-                        <br />
+                        <span class="auto-style6">v</span><br />
                     </td>
                 </tr>
             </table>
@@ -43,16 +45,13 @@
             <asp:Button ID="Salir" runat="server" BackColor="White" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style5" />
             <br />
         </div>
-    
-    
-        <div>
+         <div>
             <asp:ContentPlaceHolder ID="head" runat="server">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                </asp:ContentPlaceHolder>
             </asp:ContentPlaceHolder>
         </div>
-
-        </form>
+    </form>
+    
+       
     
 </body>
 </html>
