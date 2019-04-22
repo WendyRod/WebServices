@@ -83,6 +83,7 @@
             height: 56px;
         }
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -111,46 +112,58 @@
                     <td class="auto-style3" style="color: #206BA4"><strong>&nbsp;Correo:&nbsp; </strong> </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Correo" TextMode="Email" runat="server" ForeColor="#206BA4"></asp:TextBox>
+                        &nbsp;
                         <asp:RequiredFieldValidator ID="rqCorreo" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Correo"></asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>Nombre:</strong></td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Nombre" runat="server" ForeColor="#206BA4"></asp:TextBox>
+                        &nbsp;
                         <asp:RequiredFieldValidator ID="rqNombre" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Nombre"></asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>Primer Apellido:</strong></td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Apellido1" runat="server" ForeColor="#206BA4"></asp:TextBox>
+                        &nbsp;
                         <asp:RequiredFieldValidator ID="rqApellido1" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Apellido1"></asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>Segundo Apellido:&nbsp; </strong> </td>
                     <td class="auto-style4">
                         <asp:TextBox ID="TextBox_Apellido2" runat="server" ForeColor="#206BA4"></asp:TextBox>
+                        &nbsp;
                         <asp:RequiredFieldValidator ID="rqApellido2" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Apellido2"></asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3" style="color: #206BA4"><strong>Cedula:&nbsp; </strong> </td>
+                    <td class="auto-style3" style="color: #206BA4"><strong>Cédula:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TextBox_Cedula" runat="server" ForeColor="#206BA4"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="rqCedula" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Cedula"></asp:RequiredFieldValidator>
+                        <asp:TextBox ID="TextBox_Cedula" runat="server" ForeColor="#206BA4" MaxLength="9"></asp:TextBox>
+                        &nbsp;
+                        <asp:RequiredFieldValidator ID="rqCedula" runat="server" min="9" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Cedula"></asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>Teléfono:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="TextBox_Celular" runat="server" ForeColor="#206BA4"></asp:TextBox>
+                        <asp:TextBox ID="TextBox_Celular" runat="server" min="8" ForeColor="#206BA4" MaxLength="8"></asp:TextBox>
+                        &nbsp;
                         <asp:RequiredFieldValidator ID="rqCelular" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="TextBox_Celular"></asp:RequiredFieldValidator>
+                        <br />
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style10">&nbsp;</td>
+                    <td class="auto-style10"></td>
                     <td class="auto-style8"></td>
                 </tr>
                 <tr>
@@ -221,18 +234,26 @@
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>Contraseña:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <input runat="server" id="Password" type="password" /></td>
+                        <br />
+                        <input runat="server" id="Password" type="password" maxlength="12" min="8" /><br />
+                        <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <asp:Label ID="PassMessage" runat="server" Font-Size="13pt" ForeColor="Red"></asp:Label>
+                        <br />
+                    </td>
                     <%--<asp:RequiredFieldValidator ID="rqPassword" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="Password"></asp:RequiredFieldValidator>--%>
                 </tr>
                 <tr>
                     <td class="auto-style3" style="color: #206BA4"><strong>Verificar contraseña:&nbsp; </strong> </td>
                     <td class="auto-style4">
-                        <input runat="server" id="Password_Confirm" type="password" /></td>
+                        <br />
+                        <input runat="server" id="Password_Confirm" type="password" maxlength="12" min="8" /><br />
+                    </td>
                     <%--<asp:RequiredFieldValidator ID="rqConfirmPassword" runat="server" ForeColor="Red" ErrorMessage="Este campo es requerido de llenar" ControlToValidate="Password_Confirm"></asp:RequiredFieldValidator>--%>
                 </tr>
                 <tr>
                     <td colspan="2" class="auto-style5">
-                        &nbsp;</td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                 </tr>
                 <tr>
                     <td colspan="2" class="auto-style5">

@@ -265,13 +265,13 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
         
         /// <summary>
-        /// Control rqPassword.
+        /// Control PassMessage.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqPassword;
+        protected global::System.Web.UI.WebControls.Label PassMessage;
         
         /// <summary>
         /// Control Password_Confirm.
@@ -281,15 +281,6 @@ namespace Easy_Enrollment {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password_Confirm;
-        
-        /// <summary>
-        /// Control rqConfirmPassword.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqConfirmPassword;
         
         /// <summary>
         /// Control Aceptar.

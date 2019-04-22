@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text.RegularExpressions;
 
 namespace Easy_Enrollment
 {
@@ -136,7 +137,10 @@ namespace Easy_Enrollment
         protected void Aceptar_Click(object sender, EventArgs e)
         {
             //Validar todos los campos
+            //CorrectEmail(TextBox_Correo.Text);
+
             //Validar();
+            
 
             string nombre = TextBox_Nombre.Text.Trim();
             string apellido1 = TextBox_Apellido1.Text.Trim();
@@ -145,12 +149,30 @@ namespace Easy_Enrollment
             string correo = TextBox_Correo.Text.Trim();
             string celular = TextBox_Celular.Text.Trim();
             string passwordHashed = Password.Value;
+            string ConfirmPass = Password_Confirm.Value;
             int idRol = Int32.Parse(DropDownList_Tipos_Usuario.SelectedValue);
             
             int codDireccion = Int32.Parse(ViewState["CodDireccion"].ToString());
             int idDireccion = WebService.RegistrarDireccion(codDireccion, TextArea_Direccion.Value);
             int confirmacion = WebService.RegistrarUsuario(nombre, apellido1, apellido2, correo, celular, cedula,idRol, idDireccion, passwordHashed);
+
+            if (passwordHashed.Equals(ConfirmPass) && CorrectEmail(correo))
+            {
+                Response.Redirect("Login.aspx");
+            }
+            else if (!passwordHashed.Equals(ConfirmPass))
+            {
+                PassMessage.Text = "Las contraseñas no coinciden";
+            }
+            //if (ValidarMail(correo))
+            //{
+            //    Console.WriteLine(correo);
+            //}
+            //else
+            //{
                 
+            //}
+
         }
 
         protected void DropDownList_Provincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -169,26 +191,42 @@ namespace Easy_Enrollment
             CargarCodigoDireccion();
         }
 
+        
 
-
-        private void Validar()
+        private Boolean CorrectEmail(String email)
         {
+            String expresion = "";
+            TextBox_Correo.Text = expresion;
 
-            string nombre = TextBox_Nombre.Text;
-            //string apellido1 = TextBox_Apellido1.Text;
-            //string apellido2 = TextBox_Apellido2.Text;
-            //string cedula = TextBox_Cedula.Text;
-            //string correo = TextBox_Correo.Text;
-            //string celular = TextBox_Celular.Text;
-            //string passwordHashed = Password.Value;
-            //int idRol = Int32.Parse(DropDownList_Tipos_Usuario.SelectedValue);
-
-
-            //    if (nombre.Equals("")) {
-            //        System.Windows.Forms.MessageBox.Equals("Debe de llenar todos los campos");
-            //    }
-
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
+
+        //public bool ValidarMail(string mail)
+        //{
+        //    if (mail.Contains("@") && mail.Contains("."))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
     }
 }

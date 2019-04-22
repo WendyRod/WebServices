@@ -32,7 +32,7 @@ Inherits="Easy_Enrollment.Login" %>
               <label for="pass">
                 Contrase&ntilde;a
               </label>
-              <asp:TextBox id="Pass" type="Password" runat="server" />
+              <asp:TextBox id="Pass" MaxLength="12" min="" type="Password" runat="server" />
               <span class="i i-warning"></span>
             </p>
               <asp:Label ID="LabelRespuesta" runat="server" ForeColor="Red"></asp:Label>
