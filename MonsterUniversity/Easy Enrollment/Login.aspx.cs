@@ -43,7 +43,7 @@ namespace Easy_Enrollment
                     {
                         case 2:
                             Session["Email"] = email;
-                            Session["Login"] = true;
+                            Session["Login"] = "YES";
                             Session.Timeout = 10;
                             Response.Redirect("Home_Profesores.aspx");
                             break;
@@ -69,7 +69,6 @@ namespace Easy_Enrollment
                 LabelRespuesta.Text = "Correo incorrecto.";
             }
 
-            Session["Login"] = false;
             Session.Timeout = 1;
 
         }
