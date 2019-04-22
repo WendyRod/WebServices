@@ -49,6 +49,15 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Correo;
         
         /// <summary>
+        /// rqCorreo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqCorreo;
+        
+        /// <summary>
         /// TextBox_Nombre control.
         /// </summary>
         /// <remarks>
@@ -56,6 +65,15 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_Nombre;
+        
+        /// <summary>
+        /// rqNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqNombre;
         
         /// <summary>
         /// TextBox_Apellido1 control.
@@ -67,6 +85,15 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Apellido1;
         
         /// <summary>
+        /// rqApellido1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqApellido1;
+        
+        /// <summary>
         /// TextBox_Apellido2 control.
         /// </summary>
         /// <remarks>
@@ -74,6 +101,15 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_Apellido2;
+        
+        /// <summary>
+        /// rqApellido2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqApellido2;
         
         /// <summary>
         /// TextBox_Cedula control.
@@ -85,6 +121,15 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.TextBox TextBox_Cedula;
         
         /// <summary>
+        /// rqCedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqCedula;
+        
+        /// <summary>
         /// TextBox_Celular control.
         /// </summary>
         /// <remarks>
@@ -92,6 +137,15 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox_Celular;
+        
+        /// <summary>
+        /// rqCelular control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqCelular;
         
         /// <summary>
         /// DropDownList_Pais control.
@@ -103,6 +157,15 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Pais;
         
         /// <summary>
+        /// rqPais control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqPais;
+        
+        /// <summary>
         /// DropDownList_Provincia control.
         /// </summary>
         /// <remarks>
@@ -110,6 +173,15 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Provincia;
+        
+        /// <summary>
+        /// rqProvincia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqProvincia;
         
         /// <summary>
         /// DropDownList_Canton control.
@@ -121,6 +193,15 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Canton;
         
         /// <summary>
+        /// rqCanton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqCanton;
+        
+        /// <summary>
         /// DropDownList_Distrito control.
         /// </summary>
         /// <remarks>
@@ -128,6 +209,24 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Distrito;
+        
+        /// <summary>
+        /// rqDistrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqDistrito;
+        
+        /// <summary>
+        /// rqDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqDireccion;
         
         /// <summary>
         /// DropDownList_Tipos_Usuario control.
@@ -139,6 +238,33 @@ namespace Easy_Enrollment {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Tipos_Usuario;
         
         /// <summary>
+        /// rqTipoUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqTipoUsuario;
+        
+        /// <summary>
+        /// rqPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqPassword;
+        
+        /// <summary>
+        /// rqConfirmPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rqConfirmPassword;
+        
+        /// <summary>
         /// Aceptar control.
         /// </summary>
         /// <remarks>
@@ -146,8 +272,5 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Aceptar;
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea TextArea_Direccion;
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password_Confirm;
     }
 }
