@@ -299,5 +299,8 @@ namespace Easy_Enrollment {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Aceptar;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea TextArea_Direccion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password_Confirm;
     }
 }
