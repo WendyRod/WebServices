@@ -13,10 +13,11 @@
             width: 100%;
         }
         .auto-style4 {
-            width: 323px;
+            width: 138px;
+            height: 93px;
         }
         .auto-style6 {
-            height: 400px;
+            height: 147px;
         }
         .auto-style7 {
             font-size: 22px;
@@ -29,9 +30,7 @@
             <table class="auto-style1">
                 <tr>
                     <td style="background-color: #FFFFFF">
-                        <br />
                         <img class="auto-style4" src="images/monsters-university-logo-272139423B-seeklogo.com.png" /><br />
-                        <br />
                     </td>
                 </tr>
             </table>
@@ -45,10 +44,6 @@
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="Salir" runat="server" ForeColor="#206BA4" OnClick="Salir_Click" Text="Salir" CssClass="auto-style7" Height="41px" Width="69px" />
             <br />
-        </div>
-    
-    
-        <div>
             <asp:ContentPlaceHolder ID="head" runat="server">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>

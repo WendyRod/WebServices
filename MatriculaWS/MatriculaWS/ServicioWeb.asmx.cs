@@ -221,7 +221,13 @@ namespace MatriculaWS
                 Conn.Open();
                 cmd.ExecuteNonQuery();
                 Conn.Close();
-                returnValue = Int32.Parse(returnParameter.Value.ToString());
+                int returnVal = Int32.Parse(returnParameter.Value.ToString());
+                if (returnVal == 1)
+                {
+                    string valor = ds.Tables[0].Rows[0]["id_direccion"].ToString();
+                    Int32.TryParse(valor, out returnValue);
+                }
+                
             }
             return returnValue;
         }
