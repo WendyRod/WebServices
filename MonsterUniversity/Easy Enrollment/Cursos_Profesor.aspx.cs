@@ -25,5 +25,10 @@ namespace Easy_Enrollment
 
 
         }
+
+        protected void GroupSelected(object sender, EventArgs e)
+        {
+
+        }
     }
 }
