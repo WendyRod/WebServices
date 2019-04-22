@@ -180,7 +180,7 @@ namespace Easy_Enrollment
             //string cedula = TextBox_Cedula.Text;
             //string correo = TextBox_Correo.Text;
             //string celular = TextBox_Celular.Text;
-            string passwordHashed = Password.Value;
+            //string passwordHashed = Password.Value;
             //int idRol = Int32.Parse(DropDownList_Tipos_Usuario.SelectedValue);
 
 
