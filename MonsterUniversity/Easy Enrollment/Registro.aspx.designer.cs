@@ -272,5 +272,8 @@ namespace Easy_Enrollment {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Aceptar;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea TextArea_Direccion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword Password_Confirm;
     }
 }
